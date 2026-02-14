@@ -13,8 +13,8 @@ def get_data():
     return house_counts
 
 
-def cal_percentage(h0, h1, h2, h3, h4, h5, h6, h6plus):
-    house_data = [h0, h1, h2, h3, h4, h5, h6, h6plus]
+def cal_percentage(h0, h1, h2, h3, h4, h5, h6, h7):
+    house_data = [h0, h1, h2, h3, h4, h5, h6, h7]
     total_houses = sum(house_data)
 
     percentages = []
@@ -28,23 +28,23 @@ def cal_percentage(h0, h1, h2, h3, h4, h5, h6, h6plus):
     return percentages
 
 
-def display_result(h0, h1, h2, h3, h4, h5, h6, h6plus, p0, p1, p2, p3, p4, p5, p6, p6plus):
+def display_result(h0, h1, h2, h3, h4, h5, h6, h7, p0, p1, p2, p3, p4, p5, p6, p7):
     print()
 
     print("Occupants:    ", end="")
-    occupancy_labels = ["0", "1", "2", "3", "4", "5", "6", ">6"]
+    occupancy_labels = ["0", "1", "2", "3", "4", "5", "6", "7"]
     for label in occupancy_labels:
         print(f"{label:>7}", end="")
     print()
 
     print("No. houses:   ", end="")
-    house_counts = [h0, h1, h2, h3, h4, h5, h6, h6plus]
+    house_counts = [h0, h1, h2, h3, h4, h5, h6, h7]
     for count in house_counts:
         print(f"{count:>7}", end="")
     print()
 
     print("Percentage:   ", end="")
-    percentages = [p0, p1, p2, p3, p4, p5, p6, p6plus]
+    percentages = [p0, p1, p2, p3, p4, p5, p6, p7]
     for percent in percentages:
         print(f"{percent:>6.1f}%", end="")
     print()
