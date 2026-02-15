@@ -47,9 +47,7 @@ def display_result(h0, h1, h2, h3, h4, h5, h6, h7, p0, p1, p2, p3, p4, p5, p6, p
     percentages = [p0, p1, p2, p3, p4, p5, p6, p7]
     for percent in percentages:
         print(f"{percent:>6.1f}%", end="")
-    print()
-
- or 2
+    print() or 2
 if __name__ == "__main__":
     data = get_data()
     h0, h1, h2, h3, h4, h5, h6, h7 = data

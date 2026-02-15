@@ -1,39 +1,60 @@
-import math
+def add_guest(list1):
+    name = input("Enter guest name: ")
+    list1.append(name)
+    print(name, "is added.")
 
-def next_point(step):
-    x = int(input(f"Input x{step} coordinates: "))
-    y = int(input(f"Input y{step} coordinates: "))
-    return (x, y)
 
-def calculate_distance(p1, p2):
-    x1, y1 = p1
-    x2, y2 = p2
-    distance = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
-    return distance
+def remove_guest(list1):
+    name = input("Enter the name of guest which you want to remove:")
+
+    if name in list1:
+        list1.remove(name)
+        print(name, "is removed.")
+    else:
+        print("Guest not found.")
+
+
+def print_guests(list1):
+    sorted_list = sorted(list1)
+
+    print("Guest list:")
+    for i in sorted_list:
+        print(i)
 
 
 def main():
-    print("----- Robot Program -----")
 
-    current_point = (0, 0)
-    step = 1
-    total_distance = 0.0
+    guests = []
+
     while True:
-        next_point = next_point(step)
 
-        if next_point == (999, 999):
+        print()
+        print("A Add guest")
+        print("R Remove guest")
+        print("P Print guest list")
+        print("Q Quit")
+
+        ch = input("Enter choice: ")
+
+        if ch == "A":
+            add_guest(guests)
+
+        elif ch == "R":
+            remove_guest(guests)
+
+        elif ch == "P":
+            print_guests(guests)
+
+        elif ch == "Q":
+            print("Total guests:", len(guests))
+            print("Goodbye! See you in the party!")
             break
 
-        distance = calculate_distance(current_point, next_point)
-        print(f"Step: {distance:.2f}")
-
-        total_distance = total_distance + distance
-        current_point = next_point
-        step = step + 1
-
-    print("--------------------------")
-    print(f"Total distance travelled by the robot: {total_distance}")
+        else:
+            print("Invalid choice. Please choose a valid option (A, R, P or Q)")
 
 
-if __name__ == "__main__":
-    main()
+main()
+
+
+
