@@ -1,8 +1,8 @@
 def get_data():
     house_counts = []
 
-    for i in range(7):
-        if i == 6:
+    for i in range(8):
+        if i == 7:
             user_input = f"Provide the number of houses with 6+ occupancy: "
         else:
             user_input = f"Provide the number of houses with {i} occupancy: "
@@ -49,11 +49,13 @@ def display_result(h0, h1, h2, h3, h4, h5, h6, h7, p0, p1, p2, p3, p4, p5, p6, p
         print(f"{percent:>6.1f}%", end="")
     print()
 
-def main():
-    house_data = get_data()
-    percentages = cal_percentage(house_data[0], house_data[1], house_data[2], house_data[3], house_data[4], house_data[5], house_data[6], house_data[6])
-
-    display_result(house_data[0], house_data[1], house_data[2], house_data[3], house_data[4], house_data[5], house_data[6], house_data[6], percentages[0], percentages[1], percentages[2], percentages[3], percentages[4], percentages[5], percentages[6], percentages[7])
-
+ or 2
 if __name__ == "__main__":
-    main()
+    data = get_data()
+    h0, h1, h2, h3, h4, h5, h6, h7 = data
+
+    p = cal_percentage(h0, h1, h2, h3, h4, h5, h6, h7)
+    p0, p1, p2, p3, p4, p5, p6, p7 = p
+
+    display_result(h0, h1, h2, h3, h4, h5, h6, h7,
+                   p0, p1, p2, p3, p4, p5, p6, p7)
